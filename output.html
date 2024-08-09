@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residence Certificate</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .certificate-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .certificate-body {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .certificate-signature {
+            text-align: right;
+        }
+        .signature-label {
+            margin-top: 25px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-container button {
+            margin: 0 10px;
+        }
+        #certId {
+            display: none; /* Hidden element to store the certificate ID */
+        }
+        span {
+            margin-right: 33px;
+        }
+        .signature-text {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5; /* Adjust this value for desired line spacing */
+        }
+        @media (max-width: 768px) {
+            .row > div {
+                margin-bottom: 15px;
+            }
+            .certificate-signature {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body onload="loadData()">
+    <div class="container">
+        <div class="certificate-header">
+            <p>ग्रामपंचायत कार्यालय <span>-----------------------------</span> ता.<span>-----------------------</span> जि.<span>--------------------------</span></p>
+            <p>Grampanchayat Office <span>----------------------</span> Tal.<span>----------------------</span> Dist.<span>----------------------</span></p>
+            <h3>रहिवासी दाखला</h3>
+            <h5>Residence Certificate</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-6">जाक्र. Dispatch no. <span id="dispatchNo"></span></div>
+            <div class="col-md-6 text-right">दिनांक : Date : <span id="dispatchdate"></span></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <p>सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी, ग्रामपंचायत <span id="village1">--------------------</span> ता. <span id="tal1">--------------------</span> जि. <span id="dist1">--------------</span><br>
+                Sarpanch/Gramsevak/Village Development Officer, Grampanchayat <span id="village2">--------------------</span> Tal. <span id="tal2">--------------------</span> Dist. <span id="dist2">--------------</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>यांकडून दाखला देण्यात येतो की, श्री/श्रीमती <span id="name1">--------------------</span><br>
+                is issuing the certificate to Mr./Mrs. <span id="name2">--------------------</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>आधार कार्ड क्रमांक <span id="aadhar1">----------------------------</span><br>
+                 Adhar card No <span id="aadhar2">------------------------------</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>हे ग्रामपंचायत <span id="village3">--------------------</span> हद्दीतील मजे <span id="village4">--------------------</span> ता. <span id="tal3">--------------------</span> जि. <span id="dist3">--------------</span>, महाराष्ट्र<br>
+                of Grampanchayat <span id="village5">--------------------</span> Village <span id="village6">--------------------</span> Tal. <span id="tal4">--------------------</span> Dist. <span id="dist4">--------------</span>, Maharashtra</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>येथील कायम/तात्पुरते रहिवासी आहेत.<br>
+                is a permanent/temporary resident.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>सदर दाखला त्यांचे विनंती अर्जितौर, रहिवासी पुराव्याची पडताळणी व स्थानिक चौकशीच्या आधारे देण्यात येत आहे.<br>
+                Certificate is issued on request of the applicant, after his resident verification & local level enquiry.</p>
+            </div>
+        </div>
+        <div class="row signature">
+            <div class="col-md-6">
+                <p>ठिकाण : Place : <span id="place"></span></p>
+            </div>
+            <div class="col-md-6 text-right certificate-signature" style="padding-top: 145px;">
+                <p class="signature-text">सही व शिक्का</p>
+                <p class="signature-text">Signature with Stamp</p>
+                <p class="signature-text">सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी</p>
+                <p class="signature-text">Sarpanch/Gramsevak/Village Development Officer</p>
+            </div>
+        </div>
+        <div id="certId"></div> <!-- Hidden element for certificate ID -->
+    </div>
+
+    <script>
+        function loadData() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            document.getElementById('dispatchNo').textContent = urlParams.get('dispatchNo') || '------------------';
+            document.getElementById('dispatchdate').textContent = urlParams.get('date') || '------------------';
+            document.getElementById('village1').textContent = urlParams.get('village1') || '------------------';
+            document.getElementById('tal1').textContent = urlParams.get('tal1') || '------------------';
+            document.getElementById('dist1').textContent = urlParams.get('dist1') || '------------------';
+            document.getElementById('village2').textContent = urlParams.get('village2') || '------------------';
+            document.getElementById('tal2').textContent = urlParams.get('tal2') || '------------------';
+            document.getElementById('dist2').textContent = urlParams.get('dist2') || '------------------';
+            document.getElementById('name1').textContent = urlParams.get('name1') || '------------------';
+            document.getElementById('name2').textContent = urlParams.get('name2') || '------------------';
+            document.getElementById('aadhar1').textContent = urlParams.get('aadhar1') || '------------------';
+            document.getElementById('aadhar2').textContent = urlParams.get('aadhar2') || '------------------';
+            document.getElementById('village3').textContent = urlParams.get('village3') || '------------------';
+            document.getElementById('village4').textContent = urlParams.get('village4') || '------------------';
+            document.getElementById('tal3').textContent = urlParams.get('tal3') || '------------------';
+            document.getElementById('dist3').textContent = urlParams.get('dist3') || '------------------';
+            document.getElementById('village5').textContent = urlParams.get('village5') || '------------------';
+            document.getElementById('village6').textContent = urlParams.get('village6') || '------------------';
+            document.getElementById('tal4').textContent = urlParams.get('tal4') || '------------------';
+            document.getElementById('dist4').textContent = urlParams.get('dist4') || '------------------';
+            document.getElementById('place').textContent = urlParams.get('place') || '------------------';
+        }
+    </script>
+</body>
+</html>

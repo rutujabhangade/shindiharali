@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residence Certificate</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .certificate-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(152, 152, 152, 0.1);
+            margin-top: 30px;
+        }
+
+        .header-text {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .header-text h3 {
+            margin-bottom: 5px;
+        }
+
+        .btn-primary {
+            background-color: #04c4ea;
+            border-color: #000000a9;
+        }
+
+        .btn-primary:hover {
+            background-color: #4496d539;
+            border-color: 1px solid #4496d539;
+        }
+
+        .form-group p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .form-group p {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .form-group p input {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .text-right {
+                text-align: left !important;
+            }
+
+            .btn-container {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="residenceForm">
+        <div class="container certificate-container">
+            <div class="header text-center header-text">
+                <p>ग्रामपंचायत कार्यालय <span>-----------------------------</span> ता.<span>-----------------------</span> जि.<span>--------------------------</span></p>
+                <p>Grampanchayat Office <span>----------------------</span> Tal.<span>----------------------</span> Dist.<span>----------------------</span></p>
+                <h3>रहिवासी दाखला</h3>
+                <h5>Residence Certificate</h5>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="dispatchNo">जाक्र. Dispatch no.</label>
+                    <input type="text" class="form-control" id="dispatchNo" name="dispatchNo" required>
+                </div>
+                <div class="col-md-6 text-right">
+                    <label for="date">दिनांक : Date :</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <p>सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी,
+                    ग्रामपंचायत 
+                    <input type="text" class="form-control d-inline-block w-25" id="village1" name="village1" required> 
+                    ता. 
+                    <input type="text" class="form-control d-inline-block w-25" id="tal1" name="tal1" required> 
+                    जि. 
+                    <input type="text" class="form-control d-inline-block w-25" id="dist1" name="dist1" required>
+                </p>
+                <p>Sarpanch/Gramsevak/Village Development Officer,
+                    Grampanchayat 
+                    <input type="text" class="form-control d-inline-block w-25" id="village2" name="village2" required> 
+                    Tal. 
+                    <input type="text" class="form-control d-inline-block w-25" id="tal2" name="tal2" required> 
+                    Dist. 
+                    <input type="text" class="form-control d-inline-block w-25" id="dist2" name="dist2" required>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p>यांकडून दाखला देण्यात येतो की, श्री/श्रीमती 
+                    <input type="text" class="form-control d-inline-block w-50" id="name1" name="name1" required>
+                </p>
+                <p>is issuing the certificate to Mr./Mrs. 
+                    <input type="text" class="form-control d-inline-block w-50" id="name2" name="name2" required>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p>आधार कार्ड क्रमांक 
+                    <input type="text" class="form-control d-inline-block w-50" id="aadhar1" name="aadhar1" required>
+                </p>
+                <p>Adhar card No 
+                    <input type="text" class="form-control d-inline-block w-50" id="aadhar2" name="aadhar2" required>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p>हे ग्रामपंचायत 
+                    <input type="text" class="form-control d-inline-block w-25" id="village3" name="village3" required> 
+                    हद्दीतील मजे
+                    <input type="text" class="form-control d-inline-block w-25" id="village4" name="village4" required> 
+                    ता. 
+                    <input type="text" class="form-control d-inline-block w-25" id="tal3" name="tal3" required> 
+                    जि. 
+                    <input type="text" class="form-control d-inline-block w-25" id="dist3" name="dist3" required>, महाराष्ट्र
+                </p>
+                <p>of Grampanchayat
+                    <input type="text" class="form-control d-inline-block w-25" id="village5" name="village5" required> 
+                    Village 
+                    <input type="text" class="form-control d-inline-block w-25" id="village6" name="village6" required> 
+                    Tal. 
+                    <input type="text" class="form-control d-inline-block w-25" id="tal4" name="tal4" required> 
+                    Dist. 
+                    <input type="text" class="form-control d-inline-block w-25" id="dist4" name="dist4" required>, Maharashtra
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p>येथील कायम/तात्पुरते रहिवासी आहेत.</p>
+                <p>is a permanent/temporary resident.</p>
+            </div>
+
+            <div class="form-group">
+                <p>सदर दाखला त्यांचे विनंती अर्जितौर, रहिवासी पुराव्याची पडताळणी व स्थानिक चौकशीच्या आधारे देण्यात येत आहे.</p>
+                <p>Certificate is issued on request of the applicant, after his resident verification & local level enquiry.</p>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="place">ठिकाण : Place :</label>
+                    <input type="text" class="form-control" id="place" name="place" required>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>सही व शिक्का </p>
+                    <p>Signature with Stamp</p>
+                    <p>सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी</p>
+                    <p>Sarpanch/Gramsevak/Village Development Officer</p>
+                </div>
+            </div>
+
+            <div class="btn-container text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzKAN4FiZBUN0rsdc4OxMjsDTQY-o5eZgmpiIyPN5fYkKP2o292-wWfDKYvUv6Zsw_K/exec'; // Replace with your Google Apps Script web app URL
+        const form = document.getElementById('residenceForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new URLSearchParams(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'Success') {
+                        alert('फॉर्म यशस्वीपणे सबमिट केला गेला आहे.');
+                        window.location.href = 'index.html'; // Redirect to another page after submission
+                    } else {
+                        alert('फॉर्म सबमिट करण्यात त्रुटी: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('फॉर्म सबमिट करण्यात त्रुटी: ' + error.message);
+                });
+        });
+    </script>
+</body>
+
+</html>
